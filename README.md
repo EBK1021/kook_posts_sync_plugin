@@ -30,8 +30,8 @@ You can purchase it here:
 ## 📸 Screenshots
 *(Optional — add your images to the `/assets` folder and link them here)*
 
-![Screenshot 1](Screenshot1.png)
-![Screenshot 2](Screenshot2.png)
+![Screenshot 1](Screenshot/Screenshot1.png)
+![Screenshot 2](Screenshot/Screenshot2.png)
 
 ---
 
