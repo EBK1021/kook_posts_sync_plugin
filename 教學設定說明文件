@@ -1,0 +1,105 @@
+# 🧩 KOOK Post Sync for WordPress  
+**WordPress 發文自動同步到 KOOK 頻道外掛**  
+_A WordPress plugin for automatic post synchronization to KOOK channels._
+
+---
+
+## 🌍 Overview / 概要
+
+Synchronize your published WordPress posts directly to **KOOK channels**.  
+This plugin automatically sends your posts upon publication, supporting instant, scheduled, and re-send operations — ideal for community managers, bloggers, and content creators.
+
+自動將 WordPress 發佈的文章同步到 **KOOK 指定頻道**。  
+支援即時發佈、排程、補送、防重發送、WP-CLI 補送與偵錯記錄。  
+BOT Token、頻道對應與作者名稱皆可於後台設定。
+
+---
+
+## ⚙️ Features / 功能特色
+
+| English | 中文 |
+|----------|------|
+| 🔄 Instant and scheduled synchronization | 即時與排程同步文章 |
+| 🕓 Auto resend for unsynced posts | 補送未成功同步的文章 |
+| 🛡️ Duplicate protection | 防止重複發送（瞬時鎖 + 狀態記錄） |
+| 💻 WP-CLI command support | 提供 WP-CLI 指令進行批次補送 |
+| 🪵 Debug logging | 偵錯記錄與除錯模式 |
+| ⚙️ Configurable BOT Token, channel mapping, author name | 後台可設定 BOT Token、頻道對應與作者名稱 |
+
+---
+
+## 🚀 Installation / 安裝
+
+### Option 1：WordPress 後台安裝
+1. 登入 WordPress 後台 → 「外掛」 → 「安裝外掛」 → 「上傳外掛」  
+2. 上傳 `kook-post-sync.zip`  
+3. 安裝並啟用外掛
+
+### Option 2：FTP 手動安裝
+1. 將整個 `kook-post-sync` 資料夾上傳至 `/wp-content/plugins/`  
+2. 在後台啟用外掛
+
+---
+
+## ⚙️ Configuration / 後台設定
+
+1. 啟用外掛後，前往  
+   **設定 → KOOK 發文同步**  
+   或在外掛列表點擊「設定」按鈕。
+
+2. 可設定項目：
+   - **KOOK BOT TOKEN**  
+     在 KOOK 後台建立機器人後取得的 Token。 
+      (kook開發者中心：https://developer.kookapp.cn)
+     
+      若未填，外掛不會發送並記錄 `no bot token set`。
+
+   - **作者顯示名稱（選填）**  
+     若填寫，所有訊息的作者欄位將使用此名稱；留白則顯示文章作者。
+   - **分類 slug ↔ KOOK 頻道 ID 對應表**  
+     ※slue在中文裡其實就是對應 <文章 → 分類目錄 → 指定分類的別名 >
+
+![Screenshot 1](assets/Screenshot_slue.png)
+
+     例如：  
+     `news` → `1234567891234567`  
+     `tutorial` → `+9876543123456789`
+
+💡 *若希望所有文章（不論分類）都發送至同一頻道，可新增一列：*  
+`分類 slug` 填入 `*`，`頻道 ID` 填入預設頻道 ID。
+
+---
+
+## 🧪 Testing / 測試同步
+
+1. 在 KOOK 建立一個頻道並取得頻道 ID  
+2. 在外掛設定頁填入：
+   - BOT Token
+   - 頻道對應表（例如：`test` → 頻道 ID）
+3. 在 WordPress 新增一個分類 slug 為 `test`
+4. 新增文章並指派該分類，點「發佈」
+5. 前往 KOOK 頻道檢查訊息是否出現：
+最新消息送來了!!
+標題：文章標題
+作者：你的名稱
+摘要：文章內容...
+
+---
+
+
+📜 License / 授權
+
+All rights reserved.
+This plugin is a commercial WordPress plugin sold exclusively through Envato Market (CodeCanyon).
+Usage rights are governed by the Envato Regular or Extended License you purchased.
+
+本外掛為付費商業軟體，僅於 Envato Market (CodeCanyon) 獨家販售。
+使用者須依據購買之 Regular 或 Extended 授權條款使用。
+
+🛒 Purchase at:
+
+
+Author: EBK
+Version: 1.3.0
+Contact: via Envato support tab after purchase
+Copyright: © 2025 EBK. All rights reserved.
